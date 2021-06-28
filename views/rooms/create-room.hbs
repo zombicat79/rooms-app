@@ -1,0 +1,20 @@
+<main>
+    <h1>CREATE A NEW ROOM</h1>
+    {{#if currentUser}}
+        <form action="/rooms/create" method="POST">
+            <label for="name-input"><strong>Name</strong></label>
+            <input id="name-input" type="text" name="name" />
+
+            <label for="description-input"><strong>Description</strong></label>
+            <input id="desription-input" type="text" name="description" />
+
+            <label for="image-input"><strong>Image</strong></label>
+            <input id="image-input" type="text" name="imageUrl" />
+
+            <input type="submit" value="Create!" />
+        </form>
+    {{/if}}
+    {{#if errorMessage}}
+        <p>{{errorMessage}}</p>
+    {{/if}}
+</main>

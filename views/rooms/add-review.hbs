@@ -1,0 +1,17 @@
+<main>
+    <h1>ADD YOUR REVIEW</h1>
+    {{#if id}}
+        <form action="/rooms/{{id}}/addReview" method="POST">
+            <label for="user-input"><strong>User</strong></label>
+            <input id="user-input" type="text" name="user" value="{{currentUser.fullName}}" />
+
+            <label for="comment-input"><strong>Comment</strong></label>
+            <input id="comment-input" type="text" name="comment" />
+
+            <input type="submit" value="Add!" />
+        </form>
+    {{/if}}
+    {{#if errorMessage}}
+        <p>{{errorMessage}}</p>
+    {{/if}}
+</main>
